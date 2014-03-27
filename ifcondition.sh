@@ -20,7 +20,7 @@
 set -o nounset                              # Treat unset variables as an error
 
 if [ -f /bin/bash ]
-then 
+then
 	echo "file /bin/bash exists"
 fi
 
