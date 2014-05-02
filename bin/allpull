@@ -1,9 +1,9 @@
 #!/bin/bash - 
 #===============================================================================
 #
-#          FILE: allpush.sh
+#          FILE: allpull.sh
 # 
-#         USAGE: ./allpush.sh 
+#         USAGE: ./allpull.sh 
 # 
 #   DESCRIPTION: 
 # 
@@ -21,19 +21,15 @@ set -o nounset                              # Treat unset variables as an error
 
 cp ~/.vimrc ~/.vim/vimrc
 
-<<<<<<< HEAD
-dir=$(find ~/Hack/ -name .git)
-=======
 dir=$(find ~/Hack -name .git)
->>>>>>> e9f9374d4031a60f20dfa803e1f9a2aa400a4358
 for dir_one in $dir
 do
 	cd $dir_one
 	cd ..
-	onepush
+	git pull
 done
 
 cd ~/vimwiki/
-onepush
+git pull
 
 exit 0
