@@ -24,8 +24,8 @@ cp ~/.vimrc ~/.vim/vimrc
 dir=$(find ~/Hack/ -name .git)
 for dir_one in $dir
 do
-	cd $dir_one
-	cd ..
-	onepush
+#	cd $dir_one
+#	cd ..
+	echo $dir_one
 done
 exit 0

@@ -1,9 +1,9 @@
 #!/bin/bash - 
 #===============================================================================
 #
-#          FILE: allpush.sh
+#          FILE: rmdotexe.sh
 # 
-#         USAGE: ./allpush.sh 
+#         USAGE: ./rmdotexe.sh 
 # 
 #   DESCRIPTION: 
 # 
@@ -13,19 +13,21 @@
 #         NOTES: ---
 #        AUTHOR: liuxueyang (lxy), liuxueyang457@163.com
 #  ORGANIZATION: Hunan University
-#       CREATED: 04/27/2014 20:22
+#       CREATED: 04/27/14 19:31
 #      REVISION:  ---
 #===============================================================================
 
 set -o nounset                              # Treat unset variables as an error
 
-cp ~/.vimrc ~/.vim/vimrc
-
-dir=$(find ~/Hack/ -name .git)
-for dir_one in $dir
+filename=$(ls | grep -v "\.c")
+for i in $filename 
 do
-	cd $dir_one
-	cd ..
-	onepush
+	if [ -d $i ]; then
+		rm -rf $i
+	elif [ -f $i ]; then
+		rm -f $i
+	fi
 done
+ 
 exit 0
+
